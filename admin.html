@@ -1,0 +1,37 @@
+<html lang="en" dir="1tr">
+<head>
+</head>
+<body>
+<script>
+function myfun()
+{
+var a = document.getElementById("password").value;
+var b = "Admin123";
+if(a=="")
+{
+document.getElementById("messages").innerHTML="** Please Fill Password";
+return false;
+}
+if(a!=b)
+{
+document.getElementById("messages").innerHTML="** password incorect";
+return false;
+}
+if(a==b)
+{
+location.href='admin.php';
+return false;
+}
+}
+</script>
+<center>
+<form class="box" action="admin.php"method="POST" onsubmit="return myfun()">
+<h1>Administrator Id</h1>
+ADMIN ID: &nbsp;&nbsp;&nbsp;<input type="text" name="" placeholder="Username"><br>
+PASSWORD: <input type="password" placeholder="********" id="password" value="">
+<span id="messages" style="color:red;"></span><br><br>
+<center><input type="submit" value="Submit">
+</form>
+</center>
+</body>
+</html>
